@@ -26,3 +26,6 @@ jobs:
           docker-compose up -d  # Khởi động container
           docker-compose run --rm app sh -c "python manage.py test"  # Chạy test
           docker-compose down  # Dừng container sau khi test
+      - name: Lint
+        run: docker-compose run --rm app sh -c "flake8"
+
